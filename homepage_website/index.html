@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Home</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>
+          $(function(){
+          var transTime = 6000;
+          var numBgColors = $('.bg-grad').length;
+          var bgtrans = setInterval(function(){
+          if($('.bg-grad.active').index() == ($('.bg-grad').length-1)){
+          $('.bg-grad.active').removeClass('active');
+          $('.bg-grad').eq(0).addClass('active');
+          }else{
+          var curIndex = $('.bg-grad.active').index();
+          $('.bg-grad.active').removeClass('active');
+          $('.bg-grad').eq(curIndex+1).addClass('active');
+          }
+          },transTime);
+          });
+        </script>
+    </head>
+    <body>
+<div class="bg-wrapper">
+  <div class="bg-grad one active"></div>
+  <div class="bg-grad two"></div>
+  <div class="bg-grad three"></div>
+</div>
+
+<div class="container-fluid">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">This is CS50x</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="course.html">Course</a>
+          <a class="nav-link" href="discussion.html">Discussion</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="inner cover">
+      <h1 class="cover-heading">CS50: Introduction to Computer Science</h1>
+      <p class="lead">An introduction to the intellectual enterprises of computer science and the art of programming.</p>
+      <p class="lead">
+      <a href="https://online-learning.harvard.edu/course/cs50-introduction-computer-science" class="btn btn-lg btn-secondary">Learn more</a>
+      </p>
+    </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Take course on edX, by <a href="https://twitter.com/harvard">@Harvard</a>.</p>
+    </div>
+  </footer>
+  </div>
+</div>
+    </body>
+</html>
